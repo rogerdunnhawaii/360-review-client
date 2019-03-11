@@ -9,7 +9,7 @@ class Review extends Component {
     super()
 
     this.state = {
-      Review: null,
+      review: null,
       shouldRedirect: false,
       redirectMessage: 'Something went wrong'
     }
@@ -25,14 +25,14 @@ class Review extends Component {
 
   componentDidMount () {
     const user = this.props.user
-    if (this.state.Review === null) {
-      this.setState({ shouldRedirect: true })
-    } else {
-      const id = this.props.match.params.id
-      viewReview(id, user)
-        .then(response => this.setState({ review: response.data.review }))
-        .catch(() => this.setState({ shouldRedirect: true }))
-    }
+    const id = this.props.match.params.id
+    console.log(user)
+    console.log(id)
+    viewReview(id, user)
+      .then(response => console.log(response))
+
+    // .then(response => this.setState({ review: response.data.review }))
+    // .catch(() => this.setState({ shouldRedirect: true }))
   }
 
   render () {

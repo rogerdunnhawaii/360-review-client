@@ -66,10 +66,10 @@ class App extends Component {
             <CreateReview alert={this.alert} user={user} CreateJobFormStatus={this.state.CreateJobFormStatus}
             />
           )} />
-          <AuthenticatedRoute user={user} exact path='/jobs/:id' render={({ match }) => (
+          <AuthenticatedRoute user={user} exact path='/reviews/:id' render={({ match }) => (
             <Review match={match} alert={this.alert} user={user} />
           )} />
-          <AuthenticatedRoute user={user} exact path='/jobs/:id/edit' render={({ match }) => (
+          <AuthenticatedRoute user={user} exact path='/reviews/:id/edit' render={({ match }) => (
             <UpdateReview match={match} alert={this.alert} user={user} />
           )} />
         </main>
