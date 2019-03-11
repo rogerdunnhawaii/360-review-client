@@ -6,17 +6,6 @@ It's about time that we as humans are allowed to rate anyone and everyone.  From
 
 It works because there is a front end using React.js and a backend using Ruby on Rails w PostGRES
 
-## Complete the repository Description field and Website field with a meaningful sentence description of the application and link to the live URL
-
-
-1. Replace `ga-wdi-boston.react-auth-template` in `package.json` with your
-   projects name.
-1. Replace the `"homepage"` field in `package.json` with your (public) Github
-   account name and repository name.
-1. Install dependencies with `npm install`.
-1. `git add` and `git commit` your changes.
-1. Run the development server with `npm start`.
-
 ## Link to the other repo
 
 - https://github.com/rogerdunnhawaii/360-review-api
@@ -24,7 +13,7 @@ It works because there is a front end using React.js and a backend using Ruby on
 ## Link to both deployed sites
 
 API: https://secret-cove-48656.herokuapp.com/
-Client: TBD
+Client: https://rogerdunnhawaii.github.io/360-review-client/
 
 ## Technologies used
 

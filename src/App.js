@@ -8,6 +8,10 @@ import SignUp from './auth/components/SignUp'
 import SignIn from './auth/components/SignIn'
 import SignOut from './auth/components/SignOut'
 import ChangePassword from './auth/components/ChangePassword'
+import ViewReviews from './review/components/ViewReviews'
+import Review from './review/components/Review'
+import CreateReview from './review/components/CreateReview'
+import UpdateReview from './review/components/UpdateReview'
 
 import Alert from 'react-bootstrap/Alert'
 
@@ -54,6 +58,19 @@ class App extends Component {
           )} />
           <AuthenticatedRoute user={user} path='/change-password' render={() => (
             <ChangePassword alert={this.alert} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} path='/reviews' render={() => (
+            <ViewReviews alert={this.alert} user={user} toggleCreateJobForm={this.toggleCreateJobForm}/>
+          )} />
+          <AuthenticatedRoute user={user} exact path='/review-create' render={() => (
+            <CreateReview alert={this.alert} user={user} CreateJobFormStatus={this.state.CreateJobFormStatus}
+            />
+          )} />
+          <AuthenticatedRoute user={user} exact path='/jobs/:id' render={({ match }) => (
+            <Review match={match} alert={this.alert} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} exact path='/jobs/:id/edit' render={({ match }) => (
+            <UpdateReview match={match} alert={this.alert} user={user} />
           )} />
         </main>
       </React.Fragment>
