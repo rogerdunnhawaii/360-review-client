@@ -41,7 +41,7 @@ class CreateReview extends Component {
     const { alert, history, user } = this.props
 
     createReview(this.state, user)
-      .then(response => this.setState({ createdReviewId: response.data.job.id }))
+      .then(response => this.setState({ createdReviewId: response.data.review.id }))
       .then(() => {
         alert(messages.createReviewSuccess, 'success')
       })

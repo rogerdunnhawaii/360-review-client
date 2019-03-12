@@ -21,8 +21,21 @@ class App extends Component {
 
     this.state = {
       user: null,
-      alerts: []
+      alerts: [],
+      showingAlert: false
     }
+  }
+
+  handleClickShowAlert () {
+    this.setState({
+      showingAlert: true
+    })
+
+    setTimeout(() => {
+      this.setState({
+        showingAlert: false
+      })
+    }, 2000)
   }
 
   setUser = user => this.setState({ user })
@@ -59,11 +72,11 @@ class App extends Component {
           <AuthenticatedRoute user={user} path='/change-password' render={() => (
             <ChangePassword alert={this.alert} user={user} />
           )} />
-          <AuthenticatedRoute user={user} path='/reviews' render={() => (
-            <ViewReviews alert={this.alert} user={user} toggleCreateJobForm={this.toggleCreateJobForm}/>
+          <AuthenticatedRoute user={user} exact path='/reviews' render={() => (
+            <ViewReviews alert={this.alert} user={user} toggleCreateReviewForm={this.toggleCreateReviewForm}/>
           )} />
           <AuthenticatedRoute user={user} exact path='/review-create' render={() => (
-            <CreateReview alert={this.alert} user={user} CreateJobFormStatus={this.state.CreateJobFormStatus}
+            <CreateReview alert={this.alert} user={user} CreateReviewFormStatus={this.state.CreateReviewFormStatus}
             />
           )} />
           <AuthenticatedRoute user={user} exact path='/reviews/:id' render={({ match }) => (

@@ -4,10 +4,11 @@ import { Redirect } from 'react-router'
 import ReviewForm from './ReviewForm'
 import { viewReview, editReview } from '../api'
 import messages from '../messages'
+import { Link } from 'react-router-dom'
 
 class ReviewEdit extends Component {
-  constructor () {
-    super()
+  constructor (props) {
+    super(props)
 
     this.state = {
       status: '',
@@ -20,12 +21,21 @@ class ReviewEdit extends Component {
   componentDidMount () {
     viewReview(this.props.match.params.id, this.props.user)
       .then(response => this.setState({
-        Customer: response.data.review.Customer,
-        Worker: response.data.review.Worker,
-        Price: response.data.review.Price,
-        Address: response.data.review.Address,
-        Date: response.data.review.Date,
-        status: response.data.review.status
+        name: response.data.review.name,
+        phone: response.data.review.phone,
+        address: response.data.review.address,
+        vehicle: response.data.review.vehicle,
+        shovel: response.data.review.shovel,
+        payment: response.data.review.payment,
+        respectful: response.data.review.respectful,
+        punctual: response.data.review.punctual,
+        honest: response.data.review.honest,
+        attitude: response.data.review.attitude,
+        teamPlayer: response.data.review.teamPlayer,
+        trustworthy: response.data.review.trustworthy,
+        openToFeedback: response.data.review.openToFeedback,
+        communication: response.data.review.communication,
+        comments: response.data.review.comments
       }))
       .catch(() => this.setState(
         { shouldRedirect: true, redirectMessage: 'Review not found' }
@@ -58,8 +68,23 @@ class ReviewEdit extends Component {
   }
 
   render () {
-    const { handleChange, handleSubmit, handleRadioButtons } = this
-    const { Customer, Worker, Price, Date, Address, message, shouldRedirect, redirectMessage, createdReviewId } = this.state
+    const { handleChange, handleSubmit } = this
+    const { name,
+      phone,
+      address,
+      vehicle,
+      shovel,
+      payment,
+      respectful,
+      punctual,
+      honest,
+      attitude,
+      teamPlayer,
+      trustworthy,
+      openToFeedback,
+      communication,
+      comments,
+      message, shouldRedirect, redirectMessage, createdReviewId } = this.state
 
     if (shouldRedirect) {
       return <Redirect to ={{
@@ -75,11 +100,26 @@ class ReviewEdit extends Component {
     return (
       <Fragment>
         { message && <Alert variant="danger">{message}</Alert> }
+        <Link to={`/reviews/${this.props.match.params.id}`}>Back to Review</Link>
+        <br />
         <ReviewForm
           handleChange={handleChange}
           handleSubmit={handleSubmit}
-          handleRadioButtons={handleRadioButtons}
-          review={{ Address, Customer, Worker, Price, Date, status }}
+          review={{ name,
+            phone,
+            address,
+            vehicle,
+            shovel,
+            payment,
+            respectful,
+            punctual,
+            honest,
+            attitude,
+            teamPlayer,
+            trustworthy,
+            openToFeedback,
+            communication,
+            comments }}
           CreateReviewFormStatus={false}
         />
       </Fragment>

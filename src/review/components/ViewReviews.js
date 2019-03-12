@@ -34,10 +34,11 @@ class Reviews extends Component {
         <ul>
           {this.state.reviews.map(review => (
             <div key={review.id} className="jumbotron mx-4">
-              Name:
+              Worker Name:
               <h2>
                 <Link to={`/reviews/${review.id}`}>{review.name}</Link>
               </h2>
+              <li>Reviewer: {this.props.user.email}</li>
               <li>Phone: {review.phone}</li>
               <li>Address: {review.address}</li>
               <li>Vehicle: {review.vehicle}</li>

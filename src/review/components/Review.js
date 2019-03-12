@@ -26,13 +26,9 @@ class Review extends Component {
   componentDidMount () {
     const user = this.props.user
     const id = this.props.match.params.id
-    console.log(user)
-    console.log(id)
     viewReview(id, user)
-      .then(response => console.log(response))
-
-    // .then(response => this.setState({ review: response.data.review }))
-    // .catch(() => this.setState({ shouldRedirect: true }))
+      .then(response => this.setState({ review: response.data.review }))
+      .catch(() => this.setState({ shouldRedirect: true }))
   }
 
   render () {
@@ -66,12 +62,13 @@ class Review extends Component {
       comments
     } = review
 
-    console.log('this.props', this.props)
-
     return (
       <article>
+        <Link to="/reviews">Back to all Reviews</Link>
+        <br />
         <ul>
-          <li>Name: {name} </li>
+          <li><h3>Worker Name: {name} </h3></li>
+          <li>Reviewer: {this.props.user.email}</li>
           <li>Phone: {phone}</li>
           <li>Address: {address}</li>
           <li>Vehicle: {vehicle}</li>
