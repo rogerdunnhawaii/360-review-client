@@ -1,6 +1,6 @@
 {
   "name": "360-review-react-client",
-  "homepage": "https://rogerdunn.github.io/360-review-client",
+  "homepage": "https://git.generalassemb.ly/ga-wdi-boston/react-auth-template.git",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
