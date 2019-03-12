@@ -5,7 +5,7 @@ const ReviewForm = ({ handleChange, handleSubmit, review, CreateReviewFormStatus
     <label htmlFor="Name">Name:</label>
     <input
       type="string"
-      name="Name"
+      name="name"
       value={review.name}
       placeholder="Name"
       required
@@ -15,7 +15,7 @@ const ReviewForm = ({ handleChange, handleSubmit, review, CreateReviewFormStatus
     <label htmlFor="Phone">Phone:</label>
     <input
       type="string"
-      name="Phone"
+      name="phone"
       value={review.phone}
       placeholder="Phone number" onChange={handleChange}
       required
@@ -24,7 +24,7 @@ const ReviewForm = ({ handleChange, handleSubmit, review, CreateReviewFormStatus
     <label htmlFor="Address">Address:</label>
     <input
       type="string"
-      name="Address"
+      name="address"
       value={review.address}
       placeholder="Address"
       onChange={handleChange}
@@ -33,7 +33,7 @@ const ReviewForm = ({ handleChange, handleSubmit, review, CreateReviewFormStatus
     <label htmlFor="Vehicle">Vehicle:</label>
     <input
       type="string"
-      name="Vehicle"
+      name="vehicle"
       value={review.vehicle}
       placeholder="yes or no"
       onChange={handleChange}
@@ -79,7 +79,7 @@ const ReviewForm = ({ handleChange, handleSubmit, review, CreateReviewFormStatus
     <input
       type="integer"
       name="honest"
-      value={review.respectful}
+      value={review.honest}
       placeholder="from 1 to 5"
       onChange={handleChange}
     />
