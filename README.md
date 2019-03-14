@@ -43,11 +43,11 @@ TBD
 
 ## An embedded screenshot of the app
 
-TBD
+SCREENSHOT OF APP![screenshot of app ](./src/css/screenshot.jpg)
 
 ## Set up and installation instructions for front end application
 
-TBD
+load it up by forking and cloning repo or going directly to website.  links are above.
 
 ## Structure
 
