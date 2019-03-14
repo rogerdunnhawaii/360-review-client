@@ -1,6 +1,6 @@
 // code taken from Sign In
 
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 import { withRouter, Link } from 'react-router-dom'
 import ReviewForm from './ReviewForm'
 import { createReview } from '../api'
@@ -34,8 +34,6 @@ class CreateReview extends Component {
     this.setState({
       [name]: newRating
     })
-    console.log('newRating', newRating)
-    console.log('name', name)
   }
 
   handleChange = event => {
@@ -98,9 +96,9 @@ class CreateReview extends Component {
     const { handleChange, handleSubmit, changeRating } = this
 
     return (
-      <Fragment>
+      <div id="addMarginTop" className="jumbotron mx-4">
         <h3> Create a new review</h3>
-        <Link to="/reviews">Back to all Reviews</Link>
+        <h2><Link to="/reviews">Back to all Reviews</Link></h2>
         <br />
 
         <ReviewForm handleChange={handleChange} handleSubmit={handleSubmit} changeRating={changeRating}
@@ -119,7 +117,7 @@ class CreateReview extends Component {
             openToFeedback,
             communication,
             comments }} CreateReviewFormStatus={true} />
-      </Fragment>
+      </div>
     )
   }
 }

@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 import Alert from 'react-bootstrap/Alert'
 import { Redirect } from 'react-router'
 import ReviewForm from './ReviewForm'
@@ -60,15 +60,14 @@ class ReviewEdit extends Component {
       .catch(() => this.setState({ shouldRedirect: true }))
   }
 
-  handleRadioButtons = event => {
-    console.log(event.target.value)
+  changeRating = (newRating, name) => {
     this.setState({
-      status: event.target.value
+      [name]: newRating
     })
   }
 
   render () {
-    const { handleChange, handleSubmit } = this
+    const { handleChange, handleSubmit, changeRating } = this
     const { name,
       phone,
       address,
@@ -98,13 +97,15 @@ class ReviewEdit extends Component {
     }
 
     return (
-      <Fragment>
+      <div id="addMarginTop" className="jumbotron mx-4">
         { message && <Alert variant="danger">{message}</Alert> }
         <Link to={`/reviews/${this.props.match.params.id}`}>Back to Review</Link>
         <br />
+        <h3> Update Review:</h3>
         <ReviewForm
           handleChange={handleChange}
           handleSubmit={handleSubmit}
+          changeRating={changeRating}
           review={{ name,
             phone,
             address,
@@ -122,7 +123,7 @@ class ReviewEdit extends Component {
             comments }}
           CreateReviewFormStatus={false}
         />
-      </Fragment>
+      </div>
     )
   }
 }

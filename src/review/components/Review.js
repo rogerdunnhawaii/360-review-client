@@ -3,6 +3,7 @@ import { Redirect } from 'react-router'
 import { Link } from 'react-router-dom'
 import { deleteReview, viewReview } from '../api'
 import messages from '../messages'
+import StarRating from 'react-star-ratings'
 
 class Review extends Component {
   constructor () {
@@ -63,32 +64,75 @@ class Review extends Component {
     } = review
 
     return (
-      <article>
-        <Link to="/reviews">Back to all Reviews</Link>
-        <br />
-        <ul>
-          <li><h3>Worker Name: {name} </h3></li>
-          <li>Reviewer: {this.props.user.email}</li>
-          <li>Phone: {phone}</li>
-          <li>Address: {address}</li>
-          <li>Vehicle: {vehicle}</li>
-          <li>Shovel: {shovel}</li>
-          <li>Payment: {payment}</li>
-          <li>Respectful: {respectful}</li>
-          <li>Punctual: {punctual}</li>
-          <li>Honest: {honest}</li>
-          <li>Attitude: {attitude}</li>
-          <li>Team Player: {teamPlayer}</li>
-          <li>Trustworthy: {trustworthy}</li>
-          <li>Open to Feedback: {openToFeedback}</li>
-          <li>Communication: {communication}</li>
-          <li>Comments: {comments}</li>
-        </ul>
-        <button onClick={this.onDeleteReview}>Delete</button>
-        <Link to={`/reviews/${this.props.match.params.id}/edit`}>
-          <button>Edit</button>
-        </Link>
-      </article>
+      <div id="addMarginTop" className="jumbotron mx-4">
+        <article>
+          <Link to="/reviews">Back to all Reviews</Link>
+          <br />
+          <ul>
+            <li><h3>Worker Name: {name} </h3></li>
+            <li>Reviewer: {this.props.user.email}</li>
+            <li>Phone: {phone}</li>
+            <li>Address: {address}</li>
+            <li>Vehicle: {vehicle}</li>
+            <li>Shovel: {shovel}</li>
+            <li>Payment: {payment}</li>
+            <li>Respectful:
+              <StarRating
+                starRatedColor="red"
+                rating={respectful}
+                name="respectful"
+              />
+            </li>
+            <li>Punctual:
+              <StarRating
+                starRatedColor="red"
+                rating={punctual}
+                name="punctual"
+              />
+            </li>
+            <li>Honest:
+              <StarRating
+                starRatedColor="red"
+                rating={honest}
+              />
+            </li>
+            <li>Attitude:
+              <StarRating
+                starRatedColor="red"
+                rating={attitude}
+              /> </li>
+            <li>Team Player:
+              <StarRating
+                starRatedColor="red"
+                rating={teamPlayer}
+              />
+            </li>
+            <li>Trustworthy:
+              <StarRating
+                starRatedColor="red"
+                rating={trustworthy}
+              />
+            </li>
+            <li>Open to Feedback:
+              <StarRating
+                starRatedColor="red"
+                rating={openToFeedback}
+              />
+            </li>
+            <li>Communication:
+              <StarRating
+                starRatedColor="red"
+                rating={communication}
+              />
+            </li>
+            <li>Comments: {comments}</li>
+          </ul>
+          <button onClick={this.onDeleteReview}>Delete</button>
+          <Link to={`/reviews/${this.props.match.params.id}/edit`}>
+            <button>Edit</button>
+          </Link>
+        </article>
+      </div>
     )
   }
 }

@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 // import axios from 'axios'
 import { Link } from 'react-router-dom'
 // import apiUrl from '../../apiConfig'
@@ -18,7 +18,6 @@ class Reviews extends Component {
 
     viewReviews(user)
       .then(response => {
-        console.log(response)
         this.setState({ reviews: response.data.reviews })
       })
   }
@@ -29,16 +28,15 @@ class Reviews extends Component {
     }
 
     return (
-      <Fragment>
+      <div id="addMarginTop">
         <h3> Reviews:</h3>
-        <Link onClick={this.props.toggleCreateReviewForm} to="/review-create">Create a Review</Link>
+        <h3><Link onClick={this.props.toggleCreateReviewForm} to="/review-create">Create a Review</Link></h3>
         <ul>
           {this.state.reviews.map(review => (
             <div key={review.id} className="jumbotron mx-4">
-              Worker Name:
-              <h2>
-                <Link to={`/reviews/${review.id}`}>{review.name}</Link>
-              </h2>
+              <h3>
+                <Link to={`/reviews/${review.id}`}>Worker Name: {review.name}</Link>
+              </h3>
               <li>Reviewer: {this.props.user.email}</li>
               <li>Phone: {review.phone}</li>
               <li>Address: {review.address}</li>
@@ -98,7 +96,7 @@ class Reviews extends Component {
             </div>
           ))}
         </ul>
-      </Fragment>
+      </div>
     )
   }
 }

@@ -1,47 +1,53 @@
-$charcoal: #bbb;
-
-h3 {
+#unauthenticatedOptions {
+  color: white;
+}
+// .main-header {
+//   position: fixed sticky;
+// }
+// // $charcoal: #bbb;
+// //
+h2, h3 {
   color: blue;
   font-family: 'Pacifico', cursive;
   text-shadow: 0 0 3px #FF0000;
   margin: 30px;
 }
-
+// //
 button {
   font-family: 'Fredoka One', cursive;
   text: red;
   margin: 20px;
 
 }
-
+// //
 #unauthenticatedOptions {
   display: flex;
   flex-grow: 1;
   align-items: center;
   justify-content: center;
 }
-
-#authenticatedOptions {
-  display: flex;
-  flex-grow: 1;
-}
-
+// //
+// // #authenticatedOptions {
+// //   display: flex;
+// //   flex-grow: 1;
+// // }
+// //
 span {
   font-family: 'Fredoka One', cursive;
   text: green;
+  margin: 20px;
 }
-
+// //
 label {
   margin: 10px;
-  text-transform: uppercase;
 }
-
+// //
 .main-header {
   align-items: center;
   justify-content: center;
   // border-bottom: 1px solid $charcoal;
   // display: flex;
-  height: 100px;
+  height: 60px;
   padding: 0 20px;
 
   a,
@@ -50,7 +56,7 @@ label {
     margin: 0 15px;
   }
 }
-
+// //
 .main-header > nav {
   justify-content: center;
   align-items: center;
@@ -59,32 +65,36 @@ label {
   // justify-content: flex-end;
 }
 
-@media (max-width: 600px) {
-  .main-header {
-    flex-direction: column;
-    justify-content: center;
-    font-size: 0.7em;
-    // height: auto;
-    padding: 10px;
-
-    h1 {
-      font-size: 2.5em;
-    }
-  }
+#addMarginTop {
+  margin-top: 60px;
 }
-
-@media (max-width: 450px) {
-  .main-header > nav {
-    justify-content: center;
-    flex-direction: column;
-    width: 100%;
-
-    a,
-    span {
-      border: 1px solid $charcoal;
-      margin-bottom: 5px;
-      text-align: center;
-      width: 80%;
-    }
-  }
-}
+// //
+// // @media (max-width: 600px) {
+// //   .main-header {
+// //     flex-direction: column;
+// //     justify-content: center;
+// //     font-size: 0.7em;
+// //     // height: auto;
+// //     padding: 10px;
+// //
+// //     h1 {
+// //       font-size: 2.5em;
+// //     }
+// //   }
+// // }
+// //
+// // @media (max-width: 450px) {
+// //   .main-header > nav {
+// //     justify-content: center;
+// //     flex-direction: column;
+// //     width: 100%;
+// //
+// //     a,
+// //     span {
+// //       border: 1px solid $charcoal;
+// //       margin-bottom: 5px;
+// //       text-align: center;
+// //       width: 80%;
+// //     }
+// //   }
+// // }

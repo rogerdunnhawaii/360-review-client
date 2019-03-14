@@ -3,6 +3,15 @@ $warning: #f1e681;
 $error: #f08181;
 $charcoal: #ccc;
 
+.container {
+  background-image: url('./css/snowlawn.jpg');
+  background-size: contain;
+}
+
+.mx-4, article, #addMarginTop {
+  opacity: 0.9;
+}
+
 .flash-success,
 .flash-warning,
 .flash-error {
