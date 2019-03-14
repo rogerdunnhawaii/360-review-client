@@ -24,7 +24,9 @@ Client: https://rogerdunnhawaii.github.io/360-review-client/
 
 ## Unsolved problems which will fixed later
 
-TBD
+1) Google maps integration
+2) Facebook login integration
+3) Text Email notification
 
 # Planning, process, problem-solving strategy
 
