@@ -17,17 +17,25 @@ class CreateReview extends Component {
       vehicle: '',
       shovel: '',
       payment: '',
-      respectful: '',
-      punctual: '',
-      honest: '',
-      attitude: '',
-      team_player: '',
-      trustworthy: '',
-      open_to_feedback: '',
-      communication: '',
+      respectful: 0,
+      punctual: 0,
+      honest: 0,
+      attitude: 0,
+      teamPlayer: 0,
+      trustworthy: 0,
+      openToFeedback: 0,
+      communication: 0,
       comments: '',
       shouldRedirect: false
     }
+  }
+
+  changeRating = (newRating, name) => {
+    this.setState({
+      [name]: newRating
+    })
+    console.log('newRating', newRating)
+    console.log('name', name)
   }
 
   handleChange = event => {
@@ -55,14 +63,14 @@ class CreateReview extends Component {
           vehicle: '',
           shovel: '',
           payment: '',
-          respectful: '',
-          punctual: '',
-          honest: '',
-          attitude: '',
-          team_player: '',
-          trustworthy: '',
-          open_to_feedback: '',
-          communication: '',
+          respectful: 0,
+          punctual: 0,
+          honest: 0,
+          attitude: 0,
+          teamPlayer: 0,
+          trustworthy: 0,
+          openToFeedback: 0,
+          communication: 0,
           comments: ''
         })
         alert(messages.createReviewFailure, 'danger')
@@ -87,7 +95,7 @@ class CreateReview extends Component {
       communication,
       comments } = this.state
 
-    const { handleChange, handleSubmit } = this
+    const { handleChange, handleSubmit, changeRating } = this
 
     return (
       <Fragment>
@@ -95,7 +103,7 @@ class CreateReview extends Component {
         <Link to="/reviews">Back to all Reviews</Link>
         <br />
 
-        <ReviewForm handleChange={handleChange} handleSubmit={handleSubmit}
+        <ReviewForm handleChange={handleChange} handleSubmit={handleSubmit} changeRating={changeRating}
           review={{ name,
             phone,
             address,

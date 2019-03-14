@@ -1,6 +1,7 @@
 import React from 'react'
+import StarRating from 'react-star-ratings'
 
-const ReviewForm = ({ handleChange, handleSubmit, review, CreateReviewFormStatus }) => (
+const ReviewForm = ({ handleChange, handleSubmit, changeRating, review, CreateReviewFormStatus }) => (
   <form className='review-create' onSubmit={handleSubmit}>
     <label htmlFor="Name">Name:</label>
     <input
@@ -64,82 +65,91 @@ const ReviewForm = ({ handleChange, handleSubmit, review, CreateReviewFormStatus
     />
     <br />
     <label htmlFor="respectful">respectful:</label>
-    <input
-      type="integer"
-      name="respectful"
-      maxLength="1"
+    <StarRating
+      rating={review.respectful}
+      starRatedColor="red"
       value={review.respectful}
-      placeholder="from 1 to 5"
-      onChange={handleChange} />
+      numberOfStars={5}
+      changeRating={ changeRating }
+      onChange={handleChange}
+      name="respectful"
+    />
     <br />
     <label htmlFor="punctual">punctual:</label>
-    <input
-      type="integer"
-      name="punctual"
-      maxLength="1"
+    <StarRating
+      rating={review.punctual}
       value={review.punctual}
-      placeholder="from 1 to 5"
+      numberOfStars={5}
+      starRatedColor="red"
+      changeRating={ changeRating }
       onChange={handleChange}
+      name="punctual"
     />
     <br />
     <label htmlFor="honest">honest:</label>
-    <input
-      type="integer"
-      name="honest"
-      maxLength="1"
+    <StarRating
+      rating={review.honest}
       value={review.honest}
-      placeholder="from 1 to 5"
+      numberOfStars={5}
+      starRatedColor="red"
+      changeRating={ changeRating }
       onChange={handleChange}
+      name="honest"
     />
     <br />
     <label htmlFor="attitude">attitude:</label>
-    <input
-      type="integer"
-      name="attitude"
-      maxLength="1"
+    <StarRating
+      rating={review.attitude}
       value={review.attitude}
-      placeholder="from 1 to 5"
+      starRatedColor="red"
+      numberOfStars={5}
+      changeRating={ changeRating }
       onChange={handleChange}
+      name="attitude"
     />
     <br />
     <label htmlFor="teamPlayer">Team Player?:</label>
-    <input
-      type="integer"
-      name="teamPlayer"
-      maxLength="1"
+    <StarRating
+      rating={review.teamPlayer}
       value={review.teamPlayer}
-      placeholder="from 1 to 5"
+      starRatedColor="red"
+      numberOfStars={5}
+      changeRating={ changeRating }
       onChange={handleChange}
+      name="teamPlayer"
     />
     <br />
     <label htmlFor="trustworthy">trustworthy:</label>
-    <input
-      type="integer"
-      name="trustworthy"
-      maxLength="1"
+    <StarRating
+      rating={review.trustworthy}
       value={review.trustworthy}
-      placeholder="from 1 to 5"
+      starRatedColor="red"
+      numberOfStars={5}
+      changeRating={ changeRating }
       onChange={handleChange}
+      name="trustworthy"
     />
     <br />
     <label htmlFor="openToFeedback">Open to Feedback:</label>
-    <input
-      type="integer"
-      name="openToFeedback"
-      maxLength="1"
+    <StarRating
+      rating={review.openToFeedback}
       value={review.openToFeedback}
-      placeholder="from 1 to 5"
+      starRatedColor="red"
+      numberOfStars={5}
+      changeRating={ changeRating }
       onChange={handleChange}
+      name="openToFeedback"
     />
     <br />
     <label htmlFor="communication">Communication:</label>
-    <input
-      type="integer"
-      name="communication"
-      maxLength="1"
+    <StarRating
+      rating={review.communication}
       value={review.communication}
-      placeholder="from 1 to 5"
+      starRatedColor="red"
+      numberOfStars={5}
+      changeRating={ changeRating }
       onChange={handleChange}
+      name="communication"
     />
     <br />
     <label htmlFor="Comments">Comments:</label>
