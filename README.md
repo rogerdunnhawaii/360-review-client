@@ -41,7 +41,7 @@ Client: https://rogerdunnhawaii.github.io/360-review-client/
 - As a user I would like to create a profile for myself
 - As a user I would like to create profiles of others
 - As a user I would like to leave reviews about others
-
+- Link to Wireframes: https://drive.google.com/open?id=1IRYpBaEoLIOEK9TontrSzNgyrLIW1ZV0
 
 ## An embedded screenshot of the app
 
