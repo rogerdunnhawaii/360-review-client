@@ -29,8 +29,10 @@ class Reviews extends Component {
 
     return (
       <div id="addMarginTop">
-        <h3> Reviews:</h3>
-        <h3><Link onClick={this.props.toggleCreateReviewForm} to="/review-create">Create a Review</Link></h3>
+        <div className="jumbotron mx-4">
+          <h3> Reviews:</h3>
+          <h3><Link onClick={this.props.toggleCreateReviewForm} to="/review-create">Create a Review for a Worker</Link></h3>
+        </div>
         <ul>
           {this.state.reviews.map(review => (
             <div key={review.id} className="jumbotron mx-4">
