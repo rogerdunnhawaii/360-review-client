@@ -6,11 +6,15 @@
 // }
 // // $charcoal: #bbb;
 // //
-h2, h3 {
+h1, h2, h3, button {
   color: blue;
   font-family: 'Pacifico', cursive;
   text-shadow: 0 0 3px #FF0000;
-  margin: 30px;
+  margin: 20px;
+}
+
+a {
+  text-shadow: 0 0 10px yellow;
 }
 // //
 button {
@@ -35,7 +39,7 @@ button {
 span {
   font-family: 'Fredoka One', cursive;
   text: green;
-  margin: 20px;
+  margin: 10px;
 }
 // //
 label {
@@ -47,8 +51,8 @@ label {
   justify-content: center;
   // border-bottom: 1px solid $charcoal;
   // display: flex;
-  height: 60px;
-  padding: 0 20px;
+  background-color: #6EB812;
+  padding: 10 20px;
 
   a,
   span {
@@ -66,7 +70,7 @@ label {
 }
 
 #addMarginTop {
-  margin-top: 60px;
+  // margin-top: 1px;
 }
 // //
 // // @media (max-width: 600px) {

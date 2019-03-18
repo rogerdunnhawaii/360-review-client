@@ -2,25 +2,25 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import './Header.scss'
 import PropTypes from 'prop-types'
-import { withStyles } from '@material-ui/core/styles'
-import AppBar from '@material-ui/core/AppBar'
-import Toolbar from '@material-ui/core/Toolbar'
-import Typography from '@material-ui/core/Typography'
-import Button from '@material-ui/core/Button'
-import IconButton from '@material-ui/core/IconButton'
+// import { withStyles } from '@material-ui/core/styles'
+// import AppBar from '@material-ui/core/AppBar'
+// import Toolbar from '@material-ui/core/Toolbar'
+// import Typography from '@material-ui/core/Typography'
+// import Button from '@material-ui/core/Button'
+// import IconButton from '@material-ui/core/IconButton'
 
-const styles = {
-  root: {
-    flexGrow: 1
-  },
-  grow: {
-    flexGrow: 1
-  },
-  menuButton: {
-    marginLeft: -12,
-    marginRight: 20
-  }
-}
+// const styles = {
+//   root: {
+//     flexGrow: 1
+//   },
+//   grow: {
+//     flexGrow: 1
+//   },
+//   menuButton: {
+//     marginLeft: -12,
+//     marginRight: 20
+//   }
+// }
 
 const authenticatedOptions = (
   <React.Fragment>
@@ -44,21 +44,25 @@ const unauthenticatedOptions = (
 const Header = ({ user }) => {
   return (
     <div className="main-header">
-      <AppBar>
-        <Toolbar>
-          <IconButton color="inherit" aria-label="Menu">
-            <div>
-              { user && <span>Welcome,<br /> {user.email}</span>}
-            </div>
-          </IconButton>
-          <Typography variant="h3" color="inherit">
-          A Rating System for Snow Removal and Landscaping Workers
-          </Typography>
-          <Button color="inherit">
-            { user ? authenticatedOptions : unauthenticatedOptions }
-          </Button>
-        </Toolbar>
-      </AppBar>
+      {/*      // <AppBar>
+      //   <Toolbar>
+      //     <IconButton color="inherit" aria-label="Menu">
+*/}
+      <div>
+        { user && <span>Welcome,<br /> {user.email}</span>}
+      </div>
+      {/* }          // </IconButton>
+          // <Typography variant="h3" color="inherit">
+*/}
+      <h1>  A Rating System for Snow Removal and Landscaping Workers</h1>
+      {/*          // </Typography>
+          // <Button color="inherit">}
+          */}
+      { user ? authenticatedOptions : unauthenticatedOptions }
+      {/*      //     </Button>
+      //   </Toolbar>
+      // </AppBar>
+*/}
     </div>
   )
 }
@@ -67,4 +71,5 @@ Header.propTypes = {
   classes: PropTypes.object.isRequired
 }
 
-export default withStyles(styles)(Header)
+export default Header
+// withStyles(styles)(Header)
