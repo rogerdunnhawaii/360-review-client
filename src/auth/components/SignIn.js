@@ -38,28 +38,30 @@ class SignIn extends Component {
     const { email, password } = this.state
 
     return (
-      <form className='auth-form' onSubmit={this.onSignIn}>
-        {/* <h2>Sign In</h2> */}
-        <label htmlFor="email"><h3>Email</h3></label>
-        <input
-          required
-          type="email"
-          name="email"
-          value={email}
-          placeholder="Email"
-          onChange={this.handleChange}
-        />
-        <label htmlFor="password"><h3>Password</h3></label>
-        <input
-          required
-          name="password"
-          value={password}
-          type="password"
-          placeholder="Password"
-          onChange={this.handleChange}
-        />
-        <button type="submit">Submit</button>
-      </form>
+      <div className="auth-div px-4">
+        <form className='auth-form' onSubmit={this.onSignIn}>
+          {/* <h2>Sign In</h2> */}
+          <label htmlFor="email">Email</label>
+          <input
+            required
+            type="email"
+            name="email"
+            value={email}
+            placeholder="email@example.com"
+            onChange={this.handleChange}
+          />
+          <label htmlFor="password">Password</label>
+          <input
+            required
+            name="password"
+            value={password}
+            type="password"
+            placeholder="Password"
+            onChange={this.handleChange}
+          />
+          <button type="submit">Submit</button>
+        </form>
+      </div>
     )
   }
 }

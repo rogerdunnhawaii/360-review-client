@@ -25,45 +25,31 @@ import PropTypes from 'prop-types'
 const authenticatedOptions = (
   <React.Fragment>
     <div id="authenticatedOptions">
-      <h5><Link to="/reviews">Reviews</Link></h5>
-      <h5><Link to="/change-password">Change Password</Link></h5>
-      <h5><Link to="/sign-out">Sign Out</Link></h5>
+      <Link to="/reviews">Reviews</Link>
+      <Link to="/change-password">Change Password</Link>
+      <Link to="/sign-out">Sign Out</Link>
     </div>
   </React.Fragment>
 )
 
 const unauthenticatedOptions = (
   <React.Fragment>
-    <div className="d-flex justify-content-center" id="unauthenticatedOptions">
-      <h5><Link to="/sign-up">Sign Up</Link></h5>
-      <h5><Link to="/sign-in">Sign In</Link></h5>
+    <div className="d-flex justify-content-around" id="unauthenticatedOptions">
+      <Link to="/sign-up">Sign Up</Link>
+      <Link className="ml-3" to="/sign-in">Sign In</Link>
     </div>
   </React.Fragment>
 )
 
 const Header = ({ user }) => {
   return (
-    <div className="main-header">
-      {/*      // <AppBar>
-      //   <Toolbar>
-      //     <IconButton color="inherit" aria-label="Menu">
-*/}
-      <div>
-        { user && <span>Welcome,<br /> {user.email}</span>}
-      </div>
-      {/* }          // </IconButton>
-          // <Typography variant="h3" color="inherit">
-*/}
-      <h1>  A Rating System for Snow Removal and Landscaping Workers</h1>
-      {/*          // </Typography>
-          // <Button color="inherit">}
-          */}
+    <nav className="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+      <div className="navbar-brand col-sm-3 col-md-4 mr-0"><span className="lead">360 Review</span></div>
+
+      { user && <span>Welcome,<br /> {user.email}</span>}
+
       { user ? authenticatedOptions : unauthenticatedOptions }
-      {/*      //     </Button>
-      //   </Toolbar>
-      // </AppBar>
-*/}
-    </div>
+    </nav>
   )
 }
 

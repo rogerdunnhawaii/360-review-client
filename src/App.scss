@@ -3,9 +3,18 @@ $warning: #f1e681;
 $error: #f08181;
 $charcoal: #ccc;
 
-.container {
-  background-image: url('./css/snowlawn.jpg');
-  background-size: contain;
+.container-fluid {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+  background-size: cover;
+  height: 100vh;
+  padding: 0;
+}
+
+.slider {
+  height: 100vh;
 }
 
 .mx-4, article, #addMarginTop {
@@ -19,11 +28,11 @@ $charcoal: #ccc;
   display: block;
   left: 25%;
   padding: 30px;
-  position: fixed;
+  position: absolute;
   text-align: center;
   top: 15%;
   width: 50%;
-  z-index: 1;
+  z-index: 10;
 }
 
 .flash-success {
@@ -38,21 +47,28 @@ $charcoal: #ccc;
   background-color: $error;
 }
 
-.auth-form {
-  display: flex;
-  flex-direction: column;
+.auth-div {
+  align-self: center;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  height: auto;
   justify-content: center;
-  // margin: 2% auto 0;
-  max-width: 600px;
+  position: absolute;
+  width: 600px;
+  z-index: 10;
 
-  h3,
-  input {
-    margin-bottom: 3%;
-  }
+  .auth-form {
+    display: flex;
+    flex-direction: column;
+  // margin: 2% auto 0
+    label {
+      padding-top: 20px;
+    }
 
-  button {
-    align-self: flex-end;
-    font-size: 2em;
-    max-width: 200px;
+    button {
+      align-self: center;
+      font-size: 2em;
+      max-width: 200px;
+    }
   }
 }
