@@ -40,38 +40,40 @@ class SignUp extends Component {
     const { email, password, passwordConfirmation } = this.state
 
     return (
-      <form className='auth-form' onSubmit={this.onSignUp}>
-        {/* <h2>Sign Up</h2> */}
+      <div className="auth-div px-4">
+        <form className="auth-form" onSubmit={this.onSignUp}>
+          {/* <h2>Sign Up</h2> */}
 
-        <label htmlFor="email"><h3>Email</h3></label>
-        <input
-          required
-          name="email"
-          value={email}
-          type="email"
-          placeholder="Email"
-          onChange={this.handleChange}
-        />
-        <label htmlFor="password"><h3>Password</h3></label>
-        <input
-          required
-          name="password"
-          value={password}
-          type="password"
-          placeholder="Password"
-          onChange={this.handleChange}
-        />
-        <label htmlFor="passwordConfirmation"><h3>Confirm Password</h3></label>
-        <input
-          required
-          name="passwordConfirmation"
-          value={passwordConfirmation}
-          type="password"
-          placeholder="Confirm Password"
-          onChange={this.handleChange}
-        />
-        <button type="submit">Submit</button>
-      </form>
+          <label htmlFor="email">Email</label>
+          <input
+            required
+            name="email"
+            value={email}
+            type="email"
+            placeholder="email@example.com"
+            onChange={this.handleChange}
+          />
+          <label htmlFor="password">Password</label>
+          <input
+            required
+            name="password"
+            value={password}
+            type="password"
+            placeholder="Password"
+            onChange={this.handleChange}
+          />
+          <label htmlFor="passwordConfirmation">Confirm Password</label>
+          <input
+            required
+            name="passwordConfirmation"
+            value={passwordConfirmation}
+            type="password"
+            placeholder="Confirm Password"
+            onChange={this.handleChange}
+          />
+          <button type="submit">Submit</button>
+        </form>
+      </div>
     )
   }
 }
