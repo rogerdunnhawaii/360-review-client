@@ -12,7 +12,6 @@ import ViewReviews from './review/components/ViewReviews'
 import Review from './review/components/Review'
 import CreateReview from './review/components/CreateReview'
 import UpdateReview from './review/components/UpdateReview'
-
 import Slider from './header/Slider'
 
 import Alert from 'react-bootstrap/Alert'

@@ -11,14 +11,23 @@ $charcoal: #ccc;
   background-size: cover;
   height: 100vh;
   padding: 0;
+<<<<<<< 333521618316c909ab98d5c7292132674a40edec
 }
 
 .slider {
   height: 100vh;
+=======
+>>>>>>> UI improvements: added slider/carousel from react bootstrap and added a better nav bar at top
 }
+
+.slider {
+  height: 100vh
+}
+
 
 .mx-4, article, #addMarginTop {
   opacity: 0.9;
+
 }
 
 .flash-success,
@@ -45,6 +54,10 @@ $charcoal: #ccc;
 
 .flash-error {
   background-color: $error;
+  border: 1px solid $charcoal;
+  display: block;
+  left: 25%;
+  padding: 30px;
 }
 
 .auth-div {
