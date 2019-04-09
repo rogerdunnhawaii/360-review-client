@@ -6,11 +6,12 @@
 // }
 // // $charcoal: #bbb;
 // //
-h1, h2, h3, button {
-  color: blue;
+label, button {
+  color: #FF4500;
   font-family: 'Pacifico', cursive;
-  text-shadow: 0 0 3px #FF0000;
+  text-shadow: 0 0 30px #FF0000;
   margin: 20px;
+  font-size: 3em;
 }
 
 a {
