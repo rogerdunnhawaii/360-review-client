@@ -41,7 +41,7 @@ class SignUp extends Component {
 
     return (
       <div className="auth-div px-4">
-        <form className="auth-form" onSubmit={this.onSignUp}>
+        <form className='auth-form' onSubmit={this.onSignUp}>
           {/* <h2>Sign Up</h2> */}
 
           <label htmlFor="email">Email</label>
